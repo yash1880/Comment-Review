@@ -1,0 +1,179 @@
+/* --- Global Styles --- */
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #64748b;
+  --success-color: #10b981;
+  --error-color: #dc2626; /* Error styling in red [cite: 64] */
+  --bg-color: #f1f5f9;
+  --card-bg: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1e293b;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* --- Form Styling [cite: 12] --- */
+.feedback-form {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px; /* Card-based layout  */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Spacing/padding for readability [cite: 66] */
+  transition: all 0.2s ease;
+}
+
+/* Highlighted input focus [cite: 63] */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Error highlighting with red borders  */
+.error-border {
+  border-color: var(--error-color) !important;
+}
+
+.error-text {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  display: block;
+}
+
+/* --- Dynamic Fields Row --- */
+.dynamic-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.add-btn, .remove-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  border: none;
+  transition: 0.2s;
+}
+
+.add-btn {
+  background: #e0e7ff;
+  color: var(--primary-color);
+  margin-top: 5px;
+}
+
+.remove-btn {
+  background: #fee2e2;
+  color: var(--error-color);
+}
+
+/* --- Buttons --- */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Button hover effects [cite: 65] */
+.submit-btn:hover:not(:disabled) {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed; /* Submit button disabled until valid [cite: 59] */
+}
+
+/* --- Dashboard/Card Styling [cite: 68] --- */
+.feedback-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 5px solid #cbd5e1;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Category & Priority badges [cite: 72] */
+.category-tag {
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  margin-left: 10px;
+}
+
+.priority-badge {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.priority-high { border-left-color: var(--error-color); }
+.priority-medium { border-left-color: #f59e0b; }
+.priority-low { border-left-color: var(--success-color); }
+
+.preview-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px; /* Screenshot preview [cite: 74] */
+}
+
+/* Responsive design  */
+@media (max-width: 600px) {
+  .app-container {
+    margin: 20px auto;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+}
+
